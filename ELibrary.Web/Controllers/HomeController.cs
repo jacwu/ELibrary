@@ -11,6 +11,9 @@ namespace ELibrary.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ELibrary.Data.ELibraryEntities entity = new Data.ELibraryEntities();
+            entity.Books.ToList();
+
             return View();
         }
     }

@@ -49,7 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ELibraryDbSeed.cs" />
     <Compile Include="ELibraryEntities.cs" />
+    <Compile Include="Migrations\201606111510588_Initial.cs" />
+    <Compile Include="Migrations\201606111510588_Initial.Designer.cs">
+      <DependentUpon>201606111510588_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,6 +67,11 @@
       <Project>{25e3e06d-9f21-4e33-8910-c0d83c74702a}</Project>
       <Name>ELibrary.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606111510588_Initial.resx">
+      <DependentUpon>201606111510588_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

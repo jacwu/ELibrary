@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using ELibrary.Model.Entities;
+using ELibrary.Data.Migrations;
 
 namespace ELibrary.Data
 {
@@ -12,6 +13,7 @@ namespace ELibrary.Data
     {
         static ELibraryEntities()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ELibraryEntities, Configuration>());
         }
         public ELibraryEntities() : base("ELibraryDBConnection")
         {
