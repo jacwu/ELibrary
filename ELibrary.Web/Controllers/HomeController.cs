@@ -9,16 +9,13 @@ namespace ELibrary.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private ITagService _tagService;
-        public HomeController(ITagService tagService)
+
+        public HomeController()
         {
-            _tagService = tagService;
         }
         // GET: Home
         public ActionResult Index()
         {
-            var tags = _tagService.AllTags;
-
             return View();
         }
     }
