@@ -250,3 +250,12 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+node_modules
+bower_components
+report_output
+bin
+obj
+packages
+*.user
+*.suo
