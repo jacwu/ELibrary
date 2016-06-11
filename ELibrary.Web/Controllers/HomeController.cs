@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ELibrary.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,15 @@ namespace ELibrary.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private ITagService _tagService;
+        public HomeController(ITagService tagService)
+        {
+            _tagService = tagService;
+        }
         // GET: Home
         public ActionResult Index()
         {
-            ELibrary.Data.ELibraryEntities entity = new Data.ELibraryEntities();
-            entity.Books.ToList();
+            var tags = _tagService.AllTags;
 
             return View();
         }

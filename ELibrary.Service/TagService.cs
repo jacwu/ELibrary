@@ -11,9 +11,22 @@ namespace ELibrary.Service
     public class TagService : ITagService
     {
         private ITagRepository tagRepository;
+        private IEnumerable<Tag> _allTags;
         public TagService(ITagRepository tagRepository)
         {
             this.tagRepository = tagRepository;
+        }
+
+        public IEnumerable<Tag> AllTags
+        {
+            get
+            {
+                if(null == _allTags)
+                {
+                    _allTags = this.tagRepository.GetAll();
+                }
+                return _allTags;
+            }
         }
     }
 }
