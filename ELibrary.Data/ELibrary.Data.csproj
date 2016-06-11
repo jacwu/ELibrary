@@ -51,12 +51,22 @@
   <ItemGroup>
     <Compile Include="ELibraryDbSeed.cs" />
     <Compile Include="ELibraryEntities.cs" />
+    <Compile Include="Infra\DbFactory.cs" />
+    <Compile Include="Infra\Disposable.cs" />
+    <Compile Include="Infra\IDbFactory.cs" />
+    <Compile Include="Infra\IRepository.cs" />
+    <Compile Include="Infra\IUnitOfWork.cs" />
+    <Compile Include="Infra\RepositoryBase.cs" />
+    <Compile Include="Infra\UnitOfWork.cs" />
     <Compile Include="Migrations\201606111510588_Initial.cs" />
     <Compile Include="Migrations\201606111510588_Initial.Designer.cs">
       <DependentUpon>201606111510588_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BookRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
