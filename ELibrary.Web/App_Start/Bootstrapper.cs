@@ -6,6 +6,7 @@ using ELibrary.Data.Infra;
 using ELibrary.Data.Repositories;
 using ELibrary.Model.Entities;
 using ELibrary.Service;
+using ELibrary.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,16 @@ namespace ELibrary.Web
         public static void Run()
         {
             ConfigureAutofacContainer();
+
+            ConfigAutoMapper();
+        }
+
+        private static void ConfigAutoMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<BookViewModel, Book>();
+            });
         }
 
         private static void ConfigureAutofacContainer()
