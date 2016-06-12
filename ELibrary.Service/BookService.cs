@@ -17,5 +17,9 @@ namespace ELibrary.Service
         {
             this.bookRepository = bookRepository;
         }
+        public Book CreateBook(Book book)
+        {
+            return this.bookRepository.Add(book);
+        }
     }
 }

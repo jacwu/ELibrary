@@ -9,5 +9,6 @@ namespace ELibrary.Service
 {
     public interface IBookService
     {
+        Book CreateBook(Book book);
     }
 }
