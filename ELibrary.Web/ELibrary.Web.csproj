@@ -197,6 +197,7 @@
     <Content Include="Views\Shared\_PartialIntro.cshtml" />
     <Content Include="Views\Books\Create.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialTag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,25 @@
+﻿@model ELibrary.Model.Entities.Tag
+
+@{
+
+    var settings = new Newtonsoft.Json.JsonSerializerSettings { ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver() };
+    var tagBytes = System.Text.Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(Model, Newtonsoft.Json.Formatting.None, settings));
+    var tagBase64 = System.Convert.ToBase64String(tagBytes);
+}
+
+<div class="col-md-4 col-sm-6 col-xs-11">
+    <a href="@Url.Action("Index", "Books", new { tag = tagBase64 })">
+        <div class="panel panel-default" style="border:solid 1px gray; margin: 20px">
+            <div class="panel-body">
+                <figure>
+                    <figcaption style="font-size:18px">
+                        <div style="height:48px">
+                            @Model.Name
+                        </div>
+                    </figcaption>
+                    <img src="~/Content/TagImg/@Model.ImageName" alt="Alternate Text" style="height:140px; width:140px" />
+                </figure>
+            </div>
+        </div>
+    </a>
+</div>

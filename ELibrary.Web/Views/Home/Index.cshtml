@@ -1,7 +1,11 @@
-﻿@{
+﻿@model System.Collections.Generic.IEnumerable<ELibrary.Model.Entities.Tag>
+@{
     ViewBag.Title = "Home";
 }
-
 <div class="container">
     @Html.Partial("_PartialIntro")
+    @foreach (var tag in Model)
+    {
+        @Html.Partial("_PartialTag", tag)
+    }
 </div>
