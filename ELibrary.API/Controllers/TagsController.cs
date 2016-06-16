@@ -13,14 +13,14 @@ namespace ELibrary.API.Controllers
     [Route("api/library/tags/{tagid?}", Name = "Tags")]
     public class TagsController : ApiController
     {
+        private ITagService _tagService;
+
+        public TagsController(ITagService tagService)
+        {
+            _tagService = tagService;
+        }
         public IHttpActionResult Get()
         {
-            //return Ok(new string[] { "value1", "value2" });
-
-            var _tagService = new TagService(
-                new TagRepository(
-                new DbFactory()
-                ));
             var results = _tagService.AllTags.ToList();
             return Ok(results);
 
