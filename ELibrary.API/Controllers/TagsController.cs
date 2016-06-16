@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ELibrary.Data;
+using ELibrary.Data.Infra;
+using ELibrary.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,7 +15,15 @@ namespace ELibrary.API.Controllers
     {
         public IHttpActionResult Get()
         {
-            return Ok(new string[] { "value1", "value2" });
+            //return Ok(new string[] { "value1", "value2" });
+
+            var _tagService = new TagService(
+                new TagRepository(
+                new DbFactory()
+                ));
+            var results = _tagService.AllTags.ToList();
+            return Ok(results);
+
         }
     }
 }
