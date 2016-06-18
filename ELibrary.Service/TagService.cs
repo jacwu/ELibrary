@@ -28,5 +28,10 @@ namespace ELibrary.Service
                 return _allTags;
             }
         }
+
+        public Tag GetTag(int id)
+        {
+            return tagRepository.GetTagWithBooks(id, false);
+        }
     }
 }

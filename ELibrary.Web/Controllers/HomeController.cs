@@ -1,4 +1,5 @@
 ﻿using ELibrary.Model.Entities;
+using ELibrary.Model.Models;
 using ELibrary.Service;
 using Newtonsoft.Json;
 using System;
@@ -38,7 +39,7 @@ namespace ELibrary.Web.Controllers
                     .Content
                     .ReadAsStringAsync();
                 var tags = JsonConvert
-                    .DeserializeObject<IEnumerable<Tag>>(rspString);
+                    .DeserializeObject<IEnumerable<TagBasicModel>>(rspString);
 
                 return View(tags);
             }

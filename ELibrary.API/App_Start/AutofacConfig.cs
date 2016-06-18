@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
+using ELibrary.API.Factories;
 using ELibrary.Data.Infra;
 using ELibrary.Data.Repositories;
 using ELibrary.Service;
@@ -20,6 +21,7 @@ namespace ELibrary.API
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
+            builder.RegisterType<ModelFactory>().As<IModelFactory>().InstancePerRequest();
 
             // Repositories
             builder.RegisterAssemblyTypes(typeof(BookRepository).Assembly)

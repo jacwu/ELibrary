@@ -10,5 +10,8 @@ namespace ELibrary.Service
     public interface ITagService
     {
         IEnumerable<Tag> AllTags { get; }
+
+        Tag GetTag(int id);
+
     }
 }
