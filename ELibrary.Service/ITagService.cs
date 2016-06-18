@@ -13,5 +13,7 @@ namespace ELibrary.Service
 
         Tag GetTag(int id);
 
+        IEnumerable<Tag> GetTagsForBook(int bookId);
+
     }
 }

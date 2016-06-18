@@ -24,7 +24,7 @@ namespace ELibrary.API.Controllers
         public IHttpActionResult Get()
         {
             var results = _tagService.AllTags.ToList()
-                .Select(t => TheModelFactory.CreateTagBasicModel(t));
+                .Select(t => TheModelFactory.CreateTagBasicModel(Url, "Tags", t));
 
             return Ok(results);
         }
@@ -34,7 +34,7 @@ namespace ELibrary.API.Controllers
             var result = _tagService.GetTag(tagId);
 
             if (result != null)
-                return Ok(TheModelFactory.CreateTagModel(result));
+                return Ok(TheModelFactory.CreateTagModel(Url, "Tags", result));
 
             return NotFound();
         }

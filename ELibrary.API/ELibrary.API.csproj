@@ -126,7 +126,10 @@
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Constants\MethodConstant.cs" />
+    <Compile Include="Constants\RelConstant.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
     <Compile Include="Factories\IModelFactory.cs" />
     <Compile Include="Factories\ModelFactory.cs" />
