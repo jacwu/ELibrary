@@ -32,6 +32,26 @@ namespace ELibrary.API.Controllers
             return Ok(results);
         }
 
+        [HttpPost]
+        [Route("api/library/books/{bookid}/borrow", Name = "BorrowBook")]
+        public IHttpActionResult BorrowBook(int bookId)
+        {
+            //TODO: Need to replace testuser when we add authentication feature
+            Order order = _orderService.BorrowBook(bookId, "testuser");
+            _unitOfWork.Commit();
 
+            var result = TheModelFactory.CreateOrderModel(Url, "Orders", order);
+
+            string location = string.Empty;
+            foreach (var link in result.Links)
+            {
+                if (link.Rel.Equals(RelConstant.SELF))
+                {
+                    location = link.Href;
+                }
+            }
+
+            return Created(location, result);
+        }
     }
 }

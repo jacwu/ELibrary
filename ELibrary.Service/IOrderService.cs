@@ -9,7 +9,8 @@ namespace ELibrary.Service
 {
     public interface IOrderService
     {
-
         IQueryable<Order> GetOpenOrders(string userName);
+
+        Order BorrowBook(int bookid, string userName);
     }
 }

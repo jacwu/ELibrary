@@ -21,5 +21,17 @@ namespace ELibrary.Service
         {
             return orderRepository.GetOpenOrders(userName);
         }
+
+        public Order BorrowBook(int bookid, string userName)
+        {
+            Book book = this.bookRepository.GetById(bookid);
+            Order order = new Order
+            {
+                Book = book,
+                OpenDate = DateTime.Now,
+                UserName = userName
+            };
+            return this.orderRepository.Add(order);
+        }
     }
 }

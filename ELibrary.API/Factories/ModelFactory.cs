@@ -52,8 +52,15 @@ namespace ELibrary.API.Factories
             {
                 Links = new List<LinkModel>
                 {
-                    CreateLink(urlHelper.Link(routeName, new {bookId = book.Id }), RelConstant.SELF),
-                    CreateLink(urlHelper.Link("TagsAssociation", new { bookId = book.Id}), RelConstant.TagsAssociation)
+                    CreateLink(urlHelper.Link(routeName, 
+                            new {bookId = book.Id }), 
+                            RelConstant.SELF),
+                    CreateLink(urlHelper.Link("TagsAssociation", 
+                            new { bookId = book.Id}), 
+                            RelConstant.TagsAssociation),
+                    CreateLink(urlHelper.Link("BorrowBook", 
+                            new { bookId = book.Id}), 
+                            RelConstant.BorrowBook, "POST")
                 },
                 Title = book.Title,
                 Description = book.Description,
@@ -69,8 +76,15 @@ namespace ELibrary.API.Factories
             {
                 Links = new List<LinkModel>
                 {
-                    CreateLink(urlHelper.Link(routeName, new {bookId = book.Id }), RelConstant.SELF),
-                    CreateLink(urlHelper.Link("TagsAssociation", new { bookId = book.Id}), RelConstant.TagsAssociation)
+                    CreateLink(urlHelper.Link(routeName,
+                            new {bookId = book.Id }),
+                            RelConstant.SELF),
+                    CreateLink(urlHelper.Link("TagsAssociation",
+                            new { bookId = book.Id}),
+                            RelConstant.TagsAssociation),
+                    CreateLink(urlHelper.Link("BorrowBook",
+                            new { bookId = book.Id}),
+                            RelConstant.BorrowBook, "POST")
                 },
                 Title = book.Title,
                 Description = book.Description,
