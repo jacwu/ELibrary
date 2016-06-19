@@ -1,17 +1,41 @@
-﻿@{
-    Layout = null;
+﻿@model string
+
+@{
+    ViewBag.Title = "Books";
 }
 
-<!DOCTYPE html>
+<div class="container" ng-app="elibrary.web" ng-controller="BooksController">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+    <div class="panel panel-primary">
+
+        <div class="panel-heading" style="font-size:large">
+            {{tag.name}}
+        </div>
+
+        <div class="panel-body">
+
+            <div ng-hide="ready">
+                <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
+            </div>
+            <table class="table" ng-show="ready">
+
+            </table>
+
+        </div>
     </div>
-</body>
-</html>
+
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/controllers/bookscontroller.js"></script>
+
+    <script>
+        angular.module("elibrary.web").value("tagValue", @Html.Raw(Model));
+    </script>
+}
+
+
+

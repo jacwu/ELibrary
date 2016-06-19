@@ -26,10 +26,6 @@ namespace ELibrary.Web.Controllers
             this._unitOfWork = unitOfWork;
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult Create()
         {
@@ -70,6 +66,13 @@ namespace ELibrary.Web.Controllers
 
             ViewBag.TagOptions = GetTagOptions();
             return View(bookViewModel);
+        }
+
+        public ActionResult Index(string tag)
+        {
+            var base64Bytes = System.Convert.FromBase64String(tag);
+            var tagJsonString = System.Text.Encoding.UTF8.GetString(base64Bytes);
+            return View((object)tagJsonString);
         }
     }
 }
