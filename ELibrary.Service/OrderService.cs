@@ -33,5 +33,12 @@ namespace ELibrary.Service
             };
             return this.orderRepository.Add(order);
         }
+
+        public void ReturnBook(int orderid)
+        {
+            Order order = this.orderRepository.GetById(orderid);
+            this.orderRepository.Update(order);
+            order.CloseDate = DateTime.Now;
+        }
     }
 }

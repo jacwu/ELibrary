@@ -53,5 +53,16 @@ namespace ELibrary.API.Controllers
 
             return Created(location, result);
         }
+
+        [HttpPut]
+        [Route("api/library/orders/{orderid}/return/", Name = "ReturnBook")]
+        public IHttpActionResult ReturnBook(int orderId)
+        {
+            _orderService.ReturnBook(orderId);
+            _unitOfWork.Commit();
+
+            return Ok();
+        }
+
     }
 }

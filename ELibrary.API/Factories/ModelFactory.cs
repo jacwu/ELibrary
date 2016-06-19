@@ -100,7 +100,12 @@ namespace ELibrary.API.Factories
             {
                 Links = new List<LinkModel>
                 {
-                    CreateLink(urlHelper.Link(routeName, new { orderId = order.Id}), RelConstant.SELF)
+                    CreateLink(urlHelper.Link(routeName,
+                                new { orderId = order.Id}), 
+                                RelConstant.SELF),
+                    CreateLink(urlHelper.Link("ReturnBook", 
+                                new { orderId = order.Id}), 
+                                RelConstant.ReturnBook, "PUT")
                 },
                 OpenDate = order.OpenDate.ToString("yyyy-MM-dd"),
                 CloseDate = order.CloseDate,
