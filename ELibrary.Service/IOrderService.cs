@@ -9,5 +9,7 @@ namespace ELibrary.Service
 {
     public interface IOrderService
     {
+
+        IQueryable<Order> GetOpenOrders(string userName);
     }
 }

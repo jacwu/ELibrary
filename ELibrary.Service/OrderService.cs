@@ -1,11 +1,7 @@
-﻿using ELibrary.Data;
-using ELibrary.Data.Repositories;
+﻿using ELibrary.Data.Repositories;
 using ELibrary.Model.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ELibrary.Service
 {
@@ -18,6 +14,12 @@ namespace ELibrary.Service
         {
             this.orderRepository = orderRepository;
             this.bookRepository = bookRepository;
+        }
+
+
+        public IQueryable<Order> GetOpenOrders(string userName)
+        {
+            return orderRepository.GetOpenOrders(userName);
         }
     }
 }
