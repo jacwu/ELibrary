@@ -20,6 +20,14 @@ namespace ELibrary.API.Controllers
             return InternalServerError(new NotImplementedException());
         }
 
+        [Route("api/library/books/{bookid}/tags", Name = "TagsAssociation")]
+        public IHttpActionResult Get(int bookId)
+        {
+            var results = _tagService.GetTagsForBook(bookId)
+                .ToList()
+                .Select(f => TheModelFactory.CreateTagBasicModel(Url, "Tags", f));
 
+            return Ok(results);
+        }
     }
 }

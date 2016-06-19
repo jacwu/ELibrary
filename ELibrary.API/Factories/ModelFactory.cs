@@ -54,6 +54,9 @@ namespace ELibrary.API.Factories
                     CreateLink(urlHelper.Link(routeName,
                                 new {bookId = book.Id }), 
                                 RelConstant.SELF),
+                    CreateLink(urlHelper.Link("TagsAssociation", 
+                                new { bookId = book.Id}), 
+                                RelConstant.TagsAssociation)
                 },
                 Title = book.Title,
                 Description = book.Description,
