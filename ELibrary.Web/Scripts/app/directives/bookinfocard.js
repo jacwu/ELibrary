@@ -5,7 +5,8 @@
         return {
             scope: {
                 book: "=",
-                initialCollapsed: "@collapsed"
+                initialCollapsed: "@collapsed",
+                notifyParent: "&borrow"
             },
             templateUrl: "Scripts/app/directives/bookinfocard.html",
             controller: ["$scope", BookInfoCardController]
@@ -18,6 +19,9 @@
 
             $scope.collapsed = !$scope.collapsed;
 
+        };
+        $scope.borrowBook = function () {
+            $scope.notifyParent();
         };
     }
 

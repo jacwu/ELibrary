@@ -10,6 +10,9 @@
                             .then(function (r) {
                                 return r.data.books;
                             });
+                },
+                borrowBook: function (bookBorrowUrl) {
+                    return $http.post(bookBorrowUrl);
                 }
 
             };
