@@ -166,6 +166,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\bookscontroller.js" />
+    <Content Include="Scripts\app\services\communicationfactory.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />

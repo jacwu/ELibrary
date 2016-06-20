@@ -18,6 +18,36 @@
                 <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
             </div>
             <table class="table" ng-show="ready">
+                <tbody>
+                    <tr ng-repeat="book in books">
+                        <td>
+                            <div class="panel primary-panel">
+                                <div class="panel-heading">
+                                    <h3>
+                                        {{book.title}}
+                                        <em class="pull-right">{{book.authorName}}</em>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <div class="panel-body">
+                                        <div class="gallery">
+                                            <div class="img-wrap">
+                                                <img ng-src="{{'/Content/BookImg/' + book.imageName}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4>Description:</h4>
+                                            <div>{{book.description}}</div>
+                                        </div>
+                                        <br>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
 
             </table>
 
@@ -31,6 +61,7 @@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/controllers/bookscontroller.js"></script>
+    <script src="~/Scripts/app/services/communicationfactory.js"></script>
 
     <script>
         angular.module("elibrary.web").value("tagValue", @Html.Raw(Model));

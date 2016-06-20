@@ -2,8 +2,8 @@
     "use strict";
 
     angular.module("elibrary.web").controller("BooksController",
-        ["$scope", "tagValue", 
-            function ($scope, tagValue) {
+        ["$scope", "tagValue", "communicationFactory",
+            function ($scope, tagValue, communicationFactory) {
 
         var booksUrl;
         $scope.ready = false;
@@ -19,8 +19,10 @@
 
         if (typeof (booksUrl) !== "undefined") {
             //retrieve book list
-
-
+            communicationFactory.getBooksByTag(booksUrl).then(function (books) {
+                $scope.books = books;
+                $scope.ready = true;
+            });
 
 
         }
