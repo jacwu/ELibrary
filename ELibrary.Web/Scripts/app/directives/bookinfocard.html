@@ -1,0 +1,24 @@
+﻿<div class="panel primary-panel">
+    <div class="panel-heading">
+        <h3>
+            {{book.title}}
+            <em class="pull-right">{{book.authorName}}</em>
+        </h3>
+    </div>
+    <div>
+        <div class="panel-body">
+            <div class="gallery">
+                <div class="img-wrap">
+                    <img ng-src="{{'/Content/BookImg/' + book.imageName}}" alt="">
+                </div>
+            </div>
+            <div>
+                <h4>Description:</h4>
+                <div>{{book.description}}</div>
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+</div>
