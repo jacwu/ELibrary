@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ELibrary.API
 {
@@ -29,6 +30,8 @@ namespace ELibrary.API
             jsonFormatter.SupportedMediaTypes.Add(
                 new MediaTypeHeaderValue("text/html"));
 
+            //Support CORS 
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
         }
     }
