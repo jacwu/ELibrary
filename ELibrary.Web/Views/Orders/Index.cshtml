@@ -1,0 +1,56 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "My Books";
+}
+
+<div class="container" ng-app="elibrary.web" ng-controller="OrdersController" ng-cloak>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="font-size:large">
+            My Books
+        </div>
+
+        <div class="panel-body">
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <td>Book</td>
+                        <td>OpenDate</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="order in orders">
+                        <td>{{ order.book.title }}</td>
+                        <td>{{ order.openDate }}</td>
+                        <td>
+                            <button class="btn btn-success" ng-click="returnBook(order)">
+                                Return
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/controllers/orderscontroller.js"></script>
+    <script src="~/Scripts/app/services/communicationfactory.js"></script>
+
+    <script>
+        angular.module("elibrary.web").value("openBooksUrlValue", "@Model");
+    </script>
+
+}
+
+
+
+
