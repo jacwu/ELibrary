@@ -1,11 +1,11 @@
 ﻿<div class="panel primary-panel">
-    <div class="panel-heading">
+    <div class="panel-heading" ng-click="collapse()">
         <h3>
             {{book.title}}
             <em class="pull-right">{{book.authorName}}</em>
         </h3>
     </div>
-    <div>
+    <div ng-hide="collapsed">
         <div class="panel-body">
             <div class="gallery">
                 <div class="img-wrap">
