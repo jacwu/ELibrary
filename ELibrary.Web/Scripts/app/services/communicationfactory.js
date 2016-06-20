@@ -22,6 +22,12 @@
                 },
                 returnBook: function (bookReturnUrl) {
                     return $http.put(bookReturnUrl);
+                },
+                getTagsByBook: function (tagsUrl) {
+                    return $http.get(tagsUrl)
+                        .then(function (r) {
+                            return r.data;
+                        });
                 }
             };
         }]);
