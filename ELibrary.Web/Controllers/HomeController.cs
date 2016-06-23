@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -25,6 +26,15 @@ namespace ELibrary.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var client = new HttpClient();
+
+            //OpenId Connect Hybrid Flow
+            var token = (User.Identity as ClaimsIdentity)
+                .FindFirst("access_token");
+            if (token != null)
+            {
+                client.SetBearerToken(token.Value);
+            }
+
             client.BaseAddress = new Uri(
                 ConfigurationManager.AppSettings["ELibraryAPIEndPoint"]);
             client.DefaultRequestHeaders.Accept.Clear();
