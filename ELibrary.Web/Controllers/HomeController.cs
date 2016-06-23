@@ -14,6 +14,7 @@ using System.Web.Mvc;
 
 namespace ELibrary.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 
@@ -45,7 +46,8 @@ namespace ELibrary.Web.Controllers
             }
             else
             {
-                return View();
+                return RedirectToAction("Index", "Error");
+                
             }
         }
     }
