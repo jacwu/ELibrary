@@ -45,7 +45,6 @@ namespace ELibrary.Web
                 {
                     SecurityTokenValidated = n =>
                     {
-                        Debug.WriteLine(n.ProtocolMessage.IdToken);
 
                         var givenNameClaim = n.AuthenticationTicket
                             .Identity.FindFirst(IdentityModel.JwtClaimTypes.GivenName);
