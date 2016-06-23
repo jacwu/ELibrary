@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace ELibrary.API.Controllers
 {
+    [Authorize]
     [Route("api/library/tags/{tagid?}", Name = "Tags")]
     public class TagsController : BaseApiController
     {
