@@ -2,26 +2,55 @@
     "use strict";
 
     angular.module("elibrary.web").factory("communicationFactory",
-        ["$http", function ($http) {
+        ["$http", "tokenContainer", function ($http, tokenContainer) {
             return {
                 getBooksByTag: function (booksUrl) {
+                    var req = {
+                        method: "GET",
+                        url: booksUrl,
+                        headers: {
+                            'Authorization': 'Bearer ' + tokenContainer.getToken()
+                        }
+                    };
 
-                    return $http.get(booksUrl)
+                    return $http(req)
                             .then(function (r) {
                                 return r.data.books;
                             });
                 },
                 borrowBook: function (bookBorrowUrl) {
-                    return $http.post(bookBorrowUrl);
+                    var req = {
+                        method: "POST",
+                        url: bookBorrowUrl,
+                        headers: {
+                            'Authorization': 'Bearer ' + tokenContainer.getToken()
+                        }
+                    };
+                    return $http(req);
                 },
                 getOpenOrders: function (openOrdersUrl) {
-                    return $http.get(openOrdersUrl)
+                    var req = {
+                        method: "GET",
+                        url: openOrdersUrl,
+                        headers: {
+                            'Authorization': 'Bearer ' + tokenContainer.getToken()
+                        }
+                    };
+
+                    return $http(req)
                             .then(function (r) {
                                 return r.data;
                             });
                 },
                 returnBook: function (bookReturnUrl) {
-                    return $http.put(bookReturnUrl);
+                    var req = {
+                        method: "PUT",
+                        url: bookReturnUrl,
+                        headers: {
+                            'Authorization': 'Bearer ' + tokenContainer.getToken()
+                        }
+                    };
+                    return $http(req);
                 },
                 getTagsByBook: function (tagsUrl) {
                     return $http.get(tagsUrl)

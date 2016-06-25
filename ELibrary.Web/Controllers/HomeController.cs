@@ -30,6 +30,7 @@ namespace ELibrary.Web.Controllers
             //OpenId Connect Hybrid Flow
             var token = (User.Identity as ClaimsIdentity)
                 .FindFirst("access_token");
+
             if (token != null)
             {
                 client.SetBearerToken(token.Value);

@@ -36,9 +36,11 @@
 @section scripts
 {
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/controllers/bookscontroller.js"></script>
     <script src="~/Scripts/app/services/communicationfactory.js"></script>
+    <script src="~/Scripts/app/services/tokencontainer.js"></script>
     <script src="~/Scripts/app/directives/bookinfocard.js"></script>
     <script>
         angular.module("elibrary.web").value("tagValue", @Html.Raw(Model));
