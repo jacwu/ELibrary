@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace ELibrary.Web.Controllers
 {
+    [Authorize]
     public class BooksController : Controller
     {
         private IBookService _bookService;

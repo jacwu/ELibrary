@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ELibrary.Web.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         // GET: Orders
