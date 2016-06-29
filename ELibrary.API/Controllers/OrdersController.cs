@@ -25,7 +25,6 @@ namespace ELibrary.API.Controllers
 
         public IHttpActionResult Get()
         {
-            //TODO: Need to replace testuser when we add authentication feature
             var results = _orderService.GetOpenOrders(User.Identity.Name)
                 .ToList()
                 .Select(f=>TheModelFactory.CreateOrderModel(Url, "Orders", f));
@@ -37,7 +36,6 @@ namespace ELibrary.API.Controllers
         [Route("api/library/books/{bookid}/borrow", Name = "BorrowBook")]
         public IHttpActionResult BorrowBook(int bookId)
         {
-            //TODO: Need to replace testuser when we add authentication feature
             Order order = _orderService.BorrowBook(bookId, User.Identity.Name);
             _unitOfWork.Commit();
 
