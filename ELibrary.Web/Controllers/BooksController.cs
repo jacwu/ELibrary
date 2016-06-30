@@ -29,6 +29,7 @@ namespace ELibrary.Web.Controllers
         }
 
 
+
         public ActionResult Create()
         {
             ViewBag.TagOptions = GetTagOptions();
@@ -47,6 +48,7 @@ namespace ELibrary.Web.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(BookViewModel bookViewModel)
         {
             if (ModelState.IsValid)

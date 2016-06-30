@@ -22,7 +22,13 @@
 
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+               @if (User.IsInRole("Admin"))
+               {
                     <li>@Html.ActionLink("Admin", "Create", "Books")</li>
+               }
+
+
                     <li>@Html.ActionLink("My Books", "Index", "Orders")</li>
                     <li>
 
