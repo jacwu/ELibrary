@@ -87,6 +87,9 @@ namespace ELibrary.Web
                             newClaimsIdentity.AddClaim(roleClaim);
                         }
 
+                        // add the access token so we can access it later on 
+                        newClaimsIdentity.AddClaim(
+                            new Claim("access_token", n.ProtocolMessage.AccessToken));
 
                         // create a new authentication ticket, overwriting the old one.
                         n.AuthenticationTicket = new AuthenticationTicket(
