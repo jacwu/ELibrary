@@ -24,6 +24,22 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Admin", "Create", "Books")</li>
                     <li>@Html.ActionLink("My Books", "Index", "Orders")</li>
+                    <li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @Html.ActionLink(string.Format("Logout ({0} {1})",
+
+                            ((User.Identity as System.Security.Claims.ClaimsIdentity).FindFirst("given_name") == null
+                             ? "" : (User.Identity as System.Security.Claims.ClaimsIdentity).FindFirst("given_name").Value),
+
+                            ((User.Identity as System.Security.Claims.ClaimsIdentity).FindFirst("family_name") == null
+                            ? "" : (User.Identity as System.Security.Claims.ClaimsIdentity).FindFirst("family_name").Value))
+
+                            , "Logout", "UserAccount")
+                        }
+                    </li>
+
                 </ul>
             </div>
         </div>
