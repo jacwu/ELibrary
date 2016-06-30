@@ -6,6 +6,7 @@ using ELibrary.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
@@ -69,8 +70,17 @@ namespace ELibrary.Web.Controllers
             return View(bookViewModel);
         }
 
+
         public ActionResult Index(string tag)
         {
+            var token = (User.Identity as ClaimsIdentity)
+                .FindFirst("access_token");
+
+            if (token != null)
+            {
+                Response.SetCookie(new HttpCookie("access_token", token.Value));
+            }
+
             var base64Bytes = System.Convert.FromBase64String(tag);
             var tagJsonString = System.Text.Encoding.UTF8.GetString(base64Bytes);
             return View((object)tagJsonString);
