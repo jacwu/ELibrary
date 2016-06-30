@@ -2,6 +2,7 @@
 using ELibrary.Data.Infra;
 using ELibrary.Model.Entities;
 using ELibrary.Service;
+using ELibrary.Web.Filters;
 using ELibrary.Web.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -72,16 +73,9 @@ namespace ELibrary.Web.Controllers
             return View(bookViewModel);
         }
 
-
+        [SetAuthCookieFilter]
         public ActionResult Index(string tag)
         {
-            var token = (User.Identity as ClaimsIdentity)
-                .FindFirst("access_token");
-
-            if (token != null)
-            {
-                Response.SetCookie(new HttpCookie("access_token", token.Value));
-            }
 
             var base64Bytes = System.Convert.FromBase64String(tag);
             var tagJsonString = System.Text.Encoding.UTF8.GetString(base64Bytes);

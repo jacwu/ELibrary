@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ELibrary.Web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -12,15 +13,9 @@ namespace ELibrary.Web.Controllers
     public class OrdersController : Controller
     {
         // GET: Orders
+        [SetAuthCookieFilter]
         public ActionResult Index()
         {
-            var token = (User.Identity as ClaimsIdentity)
-                .FindFirst("access_token");
-
-            if (token != null)
-            {
-                Response.SetCookie(new HttpCookie("access_token", token.Value));
-            }
 
             var baseAddress = ConfigurationManager.AppSettings["ELibraryAPIEndPoint"];
             return View((object)(baseAddress + "api/library/orders"));
