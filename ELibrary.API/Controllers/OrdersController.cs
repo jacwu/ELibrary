@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace ELibrary.API.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "NormalUser")]
     [Route("api/library/orders/{orderid?}", Name="Orders")]
     public class OrdersController :  BaseApiController
     {

@@ -47,6 +47,7 @@ namespace ELibrary.Web.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(BookViewModel bookViewModel)
         {
             if (ModelState.IsValid)
