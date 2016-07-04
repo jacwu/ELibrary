@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ELibrary.Web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace ELibrary.Web.Controllers
     public class OrdersController : Controller
     {
         // GET: Orders
+        [SetAuthCookieFilter]
         public ActionResult Index()
         {
             var baseAddress = ConfigurationManager.AppSettings["ELibraryAPIEndPoint"];

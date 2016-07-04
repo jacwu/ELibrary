@@ -2,6 +2,7 @@
 using ELibrary.Data.Infra;
 using ELibrary.Model.Entities;
 using ELibrary.Service;
+using ELibrary.Web.Filters;
 using ELibrary.Web.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,7 @@ namespace ELibrary.Web.Controllers
             return View(bookViewModel);
         }
 
+        [SetAuthCookieFilter]
         public ActionResult Index(string tag)
         {
             var base64Bytes = System.Convert.FromBase64String(tag);
