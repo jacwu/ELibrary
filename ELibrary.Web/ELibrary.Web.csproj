@@ -202,6 +202,7 @@
     <Content Include="css\mysite.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\bookscontroller.js" />
@@ -209,6 +210,7 @@
     <Content Include="Scripts\app\directives\bookinfocard.html" />
     <Content Include="Scripts\app\directives\bookinfocard.js" />
     <Content Include="Scripts\app\services\communicationfactory.js" />
+    <Content Include="Scripts\app\services\tokencontainer.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
