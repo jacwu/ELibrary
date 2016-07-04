@@ -1,5 +1,6 @@
 ﻿using ELibrary.Api.Constants;
 using ELibrary.API.Factories;
+using ELibrary.API.Filters;
 using ELibrary.Data.Infra;
 using ELibrary.Model.Entities;
 using ELibrary.Service;
@@ -34,6 +35,7 @@ namespace ELibrary.API.Controllers
 
         [HttpPost]
         [Route("api/library/books/{bookid}/borrow", Name = "BorrowBook")]
+        [RequiredScope(Scope = "elibrarymanagement")]
         public IHttpActionResult BorrowBook(int bookId)
         {
             Order order = _orderService.BorrowBook(bookId, User.Identity.Name);
