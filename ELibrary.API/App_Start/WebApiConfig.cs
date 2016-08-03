@@ -23,6 +23,11 @@ namespace ELibrary.API
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.Routes.MapHttpRoute(
+                name: "content",
+                routeTemplate: "content/{category}/{file}"
+            );
+
             //Support JSON CamelCase
             var jsonFormatter = config.Formatters.JsonFormatter;
             jsonFormatter.SerializerSettings.ContractResolver =

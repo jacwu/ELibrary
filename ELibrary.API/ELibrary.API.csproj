@@ -121,6 +121,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BookImages\cleancode.jpg" />
+    <Content Include="Content\BookImages\clrviacsharp.jpg" />
+    <Content Include="Content\BookImages\codecomplete.jpg" />
+    <Content Include="Content\BookImages\crackingcodeinterview.jpg" />
+    <Content Include="Content\BookImages\designoffreebsd.jpg" />
+    <Content Include="Content\BookImages\javascript_thegoodparts.jpg" />
+    <Content Include="Content\BookImages\learnpowershell.jpg" />
+    <Content Include="Content\BookImages\linuxprogramminginterface.jpg" />
+    <Content Include="Content\BookImages\networkprogrammingperl.jpg" />
+    <Content Include="Content\BookImages\understandlinuxkernel.jpg" />
+    <Content Include="Content\BookImages\webdesign.jpg" />
+    <Content Include="Content\BookImages\windowsinternal.jpg" />
+    <Content Include="Content\TagImages\application.png" />
+    <Content Include="Content\TagImages\csharp.png" />
+    <Content Include="Content\TagImages\data_structure.png" />
+    <Content Include="Content\TagImages\doNet.png" />
+    <Content Include="Content\TagImages\javascript.png" />
+    <Content Include="Content\TagImages\programming.png" />
+    <Content Include="Content\TagImages\software_design.png" />
+    <Content Include="Content\TagImages\unix.PNG" />
+    <Content Include="Content\TagImages\web_design.png" />
+    <Content Include="Content\TagImages\windows_server.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
