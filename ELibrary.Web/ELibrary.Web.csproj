@@ -163,6 +163,8 @@
     <Content Include="css\mysite.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\bookscontroller.js" />
@@ -206,6 +208,7 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Shared\_PartialTag.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
