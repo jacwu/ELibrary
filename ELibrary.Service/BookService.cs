@@ -19,7 +19,13 @@ namespace ELibrary.Service
         }
         public Book CreateBook(Book book)
         {
-            return this.bookRepository.Add(book);
+            return bookRepository.Add(book);
+        }
+
+        public void DeleteBookById(int id)
+        {
+            var book = bookRepository.GetById(id);
+            bookRepository.Delete(book);
         }
     }
 }

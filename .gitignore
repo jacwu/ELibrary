@@ -259,3 +259,5 @@ obj
 packages
 *.user
 *.suo
+/ELibrary.API/Content/BookImages/2投水电装机.jpg
+/ELibrary.API/Content/BookImages/640262067360423630.jpg

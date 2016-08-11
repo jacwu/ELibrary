@@ -60,7 +60,10 @@ namespace ELibrary.API.Factories
                             RelConstant.TagsAssociation),
                     CreateLink(urlHelper.Link("BorrowBook", 
                             new { bookId = book.Id}), 
-                            RelConstant.BorrowBook, "POST")
+                            RelConstant.BorrowBook, "POST"),
+                    CreateLink(urlHelper.Link("Books",
+                            new { bookId = book.Id}),
+                            RelConstant.DeleteBook, "DELETE")
                 },
                 Title = book.Title,
                 Description = book.Description,
@@ -84,7 +87,10 @@ namespace ELibrary.API.Factories
                             RelConstant.TagsAssociation),
                     CreateLink(urlHelper.Link("BorrowBook",
                             new { bookId = book.Id}),
-                            RelConstant.BorrowBook, "POST")
+                            RelConstant.BorrowBook, "POST"),
+                    CreateLink(urlHelper.Link("Books",
+                            new { bookId = book.Id}),
+                            RelConstant.DeleteBook, "DELETE")
                 },
                 Title = book.Title,
                 Description = book.Description,
